@@ -44,3 +44,23 @@ text-align: justify;
     }
     
 }
+.btn{
+    padding: 12px 32px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background: rgb(32, 177, 255) ;
+    color: #222;
+    border:1px solid #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn-light{
+background: transparent;
+color: #fff;
+
+}
+.btn:hover {
+    background: rgba(255,255,255,0.2);
+    color:#fff;
+    transition:0.3s;
+}

@@ -91,3 +91,14 @@ outline-color: rgb(32, 177, 255);
 .text{
     color: black;
 }
+.package-view{
+    color: black;
+    background-color: rgb(32, 177, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 00.25em;
+    cursor: pointer;
+    width: fit-content;
+}

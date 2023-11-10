@@ -29,6 +29,7 @@ const Table = () => {
         })
             .then(() => history('/table')).catch((error) => alert(JSON.stringify(error)));
     }
+    console.log(packageDatas);
     return (
         <>
             <Sidebar />
@@ -37,6 +38,7 @@ const Table = () => {
                 <table>
                     <tr>
                         <th>PackageName</th>
+                        <th>Image</th> 
                         <th>Sender</th>
                         <th>Reciever</th>
                         <th>ShipmentDetail</th>
@@ -50,6 +52,7 @@ const Table = () => {
                             <tbody key={data._id}>
                                 <tr >
                                     <td>{data.packageName}</td>
+                                    <td>{data.image}</td>
                                     <td>{data.sender}</td>
                                     <td>{data.reciver}</td>
                                     <td>{data.shipmentDetails}</td>

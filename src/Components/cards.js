@@ -1,29 +1,57 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+import TrackingCard from './trackingCard';
 import "../Css/Cardstyle.css";
+const Cards = ({ props }) => {
+  const location = useLocation();
+  const Package = location.state;
 
-const Cards = ({data}) => {
-  
-    console.log(data);
   return (
-    <div className="
-    project-card">
-{/* {/*         
-        <h2 className="project-title">{props.title} </h2>
-        <div className="pro-details">
-            <p>{props.text} </p>
-            <h2 className="project-title" style={{alignItems:"center",marginLeft:"60px"}}>TECH STACK</h2>
-            <ul style= {{listStyleType:"disc",fontSize:"6",color:"white" ,marginLeft:"5px"}}>
-             <li> <p style={{color:"red"}}> FRONTEND :</p> <p> {props.frontend}</p></li>
-                <li> <p style={{color:"red"}}> BACKEND :</p><p>{props.backend}</p></li>
-                <li> <p style={{color:"red"}}>DATABASE :</p><p> {props.database}</p></li>
-            </ul>
-            <div className="pro-btns">
-                <a href={props.view} target='_blank' className="btn">View</a>
-                <a href={props.source}target='_blank' className="btn">Source</a>
-            </div> */}
-        
-    </div>
-  )
+    <>
+      {Package ?
+        <div className="work-container">
+
+          <div className="project-container">
+            <div className="project-card">
+              <img src={Package.image} alt="true" />
+              <h2 className="project-title">{Package.packageName} </h2>
+              <div className="pro-details">
+                <p>Sender : {Package.sender} </p>
+                <p>Reciever : {Package.reciver} </p>
+                <p>Shiping Details : {Package.shipmentDetails} </p>
+                < div >
+                  <h3 style={{color:"white"}}>Tracking Information</h3>
+                  <div id="tracking-cards">
+                    {Package.tracking.map((entry, index) => (
+                      <TrackingCard
+                        key={index}
+                        location={entry.location}
+                        status={entry.status}
+                        time={entry.time}
+                      />
+                    ))}
+                  </div>
+                </div >
+                <div className="pro-btns">
+                 
+                  <a href='/tracker' target='_blank' className="btn">Back</a> 
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div >
+
+        : <></>}
+
+
+
+
+    </>
+
+
+  );
 }
 
 export default Cards

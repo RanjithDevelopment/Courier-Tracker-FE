@@ -40,7 +40,7 @@ const Signup = () => {
     //Login Submission 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formdata)
+        
         const response = axios.post("https://courier-tracker-service.onrender.com/api/signUp", { ...formdata })
             .then((response) => {
                 if (response.status === 200) {
@@ -75,22 +75,27 @@ const Signup = () => {
                             type="text"
                             onChange={(e) => commonchange(e)}
                             value={formdata.name} />
+                         <span style={{ color: "red" }}>{formdata.error.name}</span> 
                         <input placeholder="Sample@gmail.com" name="email"
                             type="email"
                             onChange={(e) => commonchange(e)}
                             value={formdata.email} />
+                        <span style={{ color: "red" }}>{formdata.error.email}</span>
                         <input placeholder="Phone No" name="phoneNo"
                             type="number"
                             onChange={(e) => commonchange(e)}
                             value={formdata.phoneNo} />
+                        <span style={{ color: "red" }}>{formdata.error.phoneNo}</span>
                         <input type="password" placeholder="password"
                             name="password"
                             onChange={(e) => commonchange(e)}
                             value={formdata.password} />
+                        <span style={{ color: "red" }}>{formdata.error.password}</span>
                         <input placeholder="confrim Password" name="confrimPassword"
                             type="password"
                             onChange={(e) => commonchange(e)}
                             value={formdata.confrimPassword} />
+                        <span style={{ color: "red" }}>{formdata.error.confrimPassword}</span>
                         <button className="login-btn" type='submit'>Register</button>
                         <p className="text">already a registered user?</p>
 

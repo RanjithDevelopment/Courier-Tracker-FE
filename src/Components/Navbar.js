@@ -23,7 +23,7 @@ window.addEventListener("scroll",changeColor);
       </Link>
       <ul className={click ? "nav-menu active" :"nav-menu"}>
         <li>
-            <Link to='/login'>Login</Link>
+            <Link to='/'>Login</Link>
         </li>
         <li>
             <Link to='/signup'>Sign Up</Link>

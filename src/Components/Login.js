@@ -44,7 +44,7 @@ const token = localStorage.getItem("token");
 
 const existuser = jwtDecode(token);
 
- existuser.existUser.role === "admin" ? navigate('/admin' ) : navigate('/')
+ existuser.existUser.role === "admin" ? navigate('/admin' ) : navigate('/tracker')
   })
   .catch((error)=>{
     alert(error.response.data.msg)
@@ -65,11 +65,12 @@ const existuser = jwtDecode(token);
             type="email"
             onChange={(e) => commonchange(e)}
             value={Logindata.email} />
+             <span style={{ color: "red" }}>{Logindata.error.email}</span> 
           <input type="password" placeholder="password" 
              name="password"
             onChange={(e) => commonchange(e)}
             value={Logindata.password} />
-
+            <span style={{ color: "red" }}>{Logindata.error.password}</span> 
           <button className="login-btn" onClick={handlesumit}>Login</button>
           <p className="text">Or SignUp</p>
 

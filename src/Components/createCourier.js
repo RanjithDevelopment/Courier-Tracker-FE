@@ -11,6 +11,7 @@ const CreateCourier = () => {
     const history = useNavigate();
     let courierValues = {
         packageName: "",
+        image:"",
         sender: "",
         reciver: "",
         shipmentDetails: "",
@@ -18,6 +19,7 @@ const CreateCourier = () => {
         status: "",
         error: {
             packageName: "",
+            image:"",
             sender: "",
             reciver: "",
             shipmentDetails: "",
@@ -114,11 +116,17 @@ const CreateCourier = () => {
                             type="text"
                             onChange={(e) => commonchange(e)}
                             value={courierData.packageName} />
+                         <span style={{ color: "red" }}>{courierData.error.packageName}</span>   
+                        <input placeholder="Image Src" name="image"
+                            type="text"
+                            onChange={(e) => commonchange(e)}
+                            value={courierData.image} />
+                         <span style={{ color: "red" }}>{courierData.error.image}</span> 
                         <input placeholder="vendor information" name="sender"
                             type="text"
                             onChange={(e) => commonchange(e)}
                             value={courierData.sender} />
-
+                         <span style={{ color: "red" }}>{courierData.error.sender}</span> 
                         <select
                             name="reciver"
                             onChange={(e) => commonchange(e)}
@@ -129,14 +137,17 @@ const CreateCourier = () => {
                                 <option key={index} value={user._id}>{user._id}</option>
                             ))}
                         </select>
+                        <span style={{ color: "red" }}>{courierData.error.reciver}</span> 
                         <input type="text" placeholder="shipment Info"
                             name="shipmentDetails"
                             onChange={(e) => commonchange(e)}
                             value={courierData.shipmentDetails} />
+                         <span style={{ color: "red" }}>{courierData.error.shipmentDetails}</span> 
                         <input placeholder="location" name="location"
                             type="text"
                             onChange={(e) => commonchange(e)}
                             value={courierData.location} />
+                         <span style={{ color: "red" }}>{courierData.error.location}</span> 
                         <select
                             name="status"
                             onChange={(e) => commonchange(e)}
@@ -148,6 +159,7 @@ const CreateCourier = () => {
                             <option value="Out For Devlivery">Out For Delivery</option>
 
                         </select>
+                        <span style={{ color: "red" }}>{courierData.error.status}</span> 
                         <button className="login-btn" type='submit'>Add</button>
 
                     </div>
