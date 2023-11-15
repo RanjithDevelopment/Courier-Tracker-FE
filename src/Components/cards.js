@@ -22,14 +22,14 @@ const Cards = ({ props }) => {
                 < div >
                   <h3 style={{color:"white"}}>Tracking Information</h3>
                   <div id="tracking-cards">
-                    {Package.tracking.map((entry, index) => (
+                    { Package.tracking ? Package.tracking.map((entry, index) => (
                       <TrackingCard
                         key={index}
                         location={entry.location}
                         status={entry.status}
                         time={entry.time}
                       />
-                    ))}
+                    )):" "}
                   </div>
                 </div >
                 <div className="pro-btns">
@@ -43,7 +43,11 @@ const Cards = ({ props }) => {
 
         </div >
 
-        : <></>}
+        : <>
+          <div>
+            <h1>There is no Package For Tracking </h1>
+          </div>
+        </>}
 
 
 

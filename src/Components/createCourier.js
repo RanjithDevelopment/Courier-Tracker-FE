@@ -43,7 +43,7 @@ const CreateCourier = () => {
             if (user) setusers(user.data);
         }
         getUsers()
-    }, [courierData]);
+    }, []);
 
     useEffect(() => {
         if (editData) {

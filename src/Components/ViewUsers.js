@@ -56,7 +56,7 @@ const UsersTable = () => {
                                     <td>{data.name}</td>
                                     <td>{data.email}</td>
                                     <td>{data.password}</td>
-                                    <td>{data.phoneNO}</td>
+                                    <td>{data.phoneNo}</td>
                                     <td>{data.role}</td>
                                     <td>
                                       
